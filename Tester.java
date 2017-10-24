@@ -90,7 +90,7 @@ public class Tester {
             char s5r = '1';
             Square s5 = new Square(s5f, s5r);
             assertEquals(s5f, s5.getFile());
-            assertEquals('1', s5.getFile());
+            assertEquals('1', s5.getRank());
             assertEquals("g1", s5.toString());
         } catch (InvalidSquareException e) {
             System.out.printf("ERROR: %s%n", e.getMessage());
