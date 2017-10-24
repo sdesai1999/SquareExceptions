@@ -63,6 +63,46 @@ public class Tester {
         } catch (InvalidSquareException e) {
             System.out.printf("ERROR: %s%n", e.getMessage());
         }
+
+        try {
+            Square s3 = new Square("f");
+            System.out.println(s3.getRank()); // shouldn't be executed
+        } catch (InvalidSquareException e) {
+            System.out.printf("ERROR: %s%n", e.getMessage());
+        }
+
+        try {
+            String newName = "";
+            Square s4 = new Square(newName);
+        } catch (InvalidSquareException e) {
+            System.out.printf("ERROR: %s%n", e.getMessage());
+        }
+
+        try {
+            String newName1 = "///sdf;lsdfjlas;kdjfa;lskfj;aslkjf;laskfj";
+            Square testSq = new Square(newName1);
+        } catch (InvalidSquareException e) {
+            System.out.printf("ERROR: %s%n", e.getMessage());
+        }
+
+        try {
+            char s5f = 'g';
+            char s5r = '1';
+            Square s5 = new Square(s5f, s5r);
+            assertEquals(s5f, s5.getFile());
+            assertEquals('1', s5.getFile());
+            assertEquals("g1", s5.toString());
+        } catch (InvalidSquareException e) {
+            System.out.printf("ERROR: %s%n", e.getMessage());
+        }
+
+        try {
+            char s6f = 'j';
+            char s6r = '8';
+            Square s6 = new Square("" + s6f + s6r);
+        } catch (InvalidSquareException e) {
+            System.out.printf("ERROR: %s%n", e.getMessage());
+        }
     }
 
     /**

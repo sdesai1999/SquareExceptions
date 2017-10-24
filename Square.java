@@ -27,6 +27,9 @@ public class Square {
     */
     public Square(String name) throws InvalidSquareException {
         this.name = name;
+        if (this.name.length() < 2) {
+            throw new InvalidSquareException(name);
+        }
         this.file = name.charAt(0);
         this.rank = name.charAt(1);
         if (!(this.isValidSquare())) {
