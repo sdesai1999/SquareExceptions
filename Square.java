@@ -2,7 +2,7 @@
  * Represents a square on an 8x8 chessboard.
  *
  * @author sdesai88
- * @version 10/23/17
+ * @version 10/24/17
 */
 public class Square {
 
@@ -82,11 +82,10 @@ public class Square {
             return false;
         }
 
-        int aFile = this.file - 0;
-        int aRank = this.rank - 0;
-        // int val of 'a' is 97, int val of 'h' is 104
-        // int val of '1' is 49, int val of '8' is 56
-        if ((aFile < 97) || (aFile > 104) || (aRank < 49) || (aRank > 56)) {
+        char fl = this.file;
+        char rk = this.rank;
+
+        if ((fl < 'a') || (fl > 'h') || (rk < '1') || (rk > '8')) {
             return false;
         }
 
